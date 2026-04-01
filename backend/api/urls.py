@@ -3,7 +3,8 @@ from rest_framework.routers import DefaultRouter
 from .views import (
     MemberViewSet, StaffViewSet, MembershipPlanViewSet,
     SubscriptionViewSet, AttendanceViewSet, ScheduleViewSet,
-    EquipmentViewSet, PaymentViewSet, MemberProgressViewSet, WorkoutViewSet
+    EquipmentViewSet, PaymentViewSet, MemberProgressViewSet, WorkoutViewSet,
+    health_check
 )
 
 router = DefaultRouter()
@@ -20,4 +21,5 @@ router.register(r'progress', MemberProgressViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('health/', health_check, name='health-check'),
 ]

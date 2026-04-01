@@ -1,4 +1,6 @@
 from rest_framework import viewsets
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 from .models import (
     Member, Staff, MembershipPlan, Subscription,
     Attendance, Schedule, Equipment, Payment,
@@ -59,3 +61,8 @@ class WorkoutViewSet(viewsets.ModelViewSet):
 class MemberProgressViewSet(viewsets.ModelViewSet):
     queryset = MemberProgress.objects.all().order_by('-id')
     serializer_class = MemberProgressSerializer
+
+
+@api_view(['GET'])
+def health_check(request):
+    return Response({'status': 'ok'})
