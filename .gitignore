@@ -1,0 +1,44 @@
+# ==========================
+# Python / Django (backend)
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.db
+db.sqlite3
+*.log
+*.pot
+*.mo
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# ==========================
+# Node / React (frontend)
+# ==========================
+node_modules/
+dist/
+.cache/
+*.local
+
+# Environment variables — never commit secrets!
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# Vite
+*.tsbuildinfo
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
